@@ -79,3 +79,41 @@ else:
     print("Not a valid triangle based on triangle inequality.")
 
 # -----------------------------------------------------------------------#------------------------------------------------------------#
+
+# 🔍 3. Simple Calculator
+# Problem:
+# Ask user to enter two numbers and an operator (+, -, *, /). Perform the operation using if-else.
+
+num1 = input('Enter a number ')
+num2 = input('Enter a number ')
+
+if not num1.isnumeric() and num2.isnumeric():
+    print('Enter a valid number')
+    exit()
+
+num1 = int(num1)
+num2 = int(num2)
+
+print('****** Welcome to Calculator ******')
+print('1. For addition')
+print('2. Substraction')
+print('3. Multiplication')
+print('4. Division')
+
+choice =(input('Enter a choice:(1-4)'))
+
+if choice not in ["1", "2", "3", "4"]:
+    print('Invalid choice')
+    exit()
+
+if choice == "1":
+    print(f'{num1} + {num2} = {num1 + num2}')
+elif choice == "2":
+    print(f'{num1} - {num2} = {num1 - num2}')
+elif choice == "3":
+    print(f'{num1} * {num2} = {num1 * num2}')
+elif choice == "4":
+    if num2 == 0:
+        print('Error: Division by zero is not allowed.')
+    else:
+        print(f'{num1} / {num2} = {num1 / num2}')
