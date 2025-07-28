@@ -117,3 +117,40 @@ elif choice == "4":
         print('Error: Division by zero is not allowed.')
     else:
         print(f'{num1} / {num2} = {num1 / num2}')
+
+-----------------------------------------------------------------------#------------------------------------------------------------#
+# 🔍 5. ATM Withdrawal Logic
+# Problem:
+# Ask the user to enter amount to withdraw. Conditions:
+
+# Must be a multiple of 100
+
+# Minimum balance after withdrawal should be ₹500
+# Print success or reason for failure.
+
+# Current bank balance 
+balance = 5000
+
+# Ask the user to enter amount to withdraw
+withdraw_amount = input('Enter amount to withdraw ( in ₹): ')
+
+# Validate if input is a number 
+if not withdraw_amount.isnumeric():
+    print('Invalid input. Please enter a valid number.')
+    exit()
+
+# convert to integer
+withdraw_amount = int(withdraw_amount)
+
+# Check if amount is multiple of 100
+if withdraw_amount % 100 != 0:
+    print('Withdrawal amount must be a multiple of ₹100.')
+    exit()
+
+# Check for minimum balance rule
+if balance - withdraw_amount < 500:
+    print(f'Insufficient balance. Minimum ₹500 must be left in the account after withdrawal.')
+else:
+    balance -= withdraw_amount
+    print(f'Withdrawal successful! ₹{withdraw_amount} has been withdrawn.')
+    print(f'Remaining balance: ₹{balance}')
